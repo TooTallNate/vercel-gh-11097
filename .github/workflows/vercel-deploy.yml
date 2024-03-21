@@ -24,19 +24,19 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        working-directory: ./my-app
+        working-directory: ./services/my-app
         run: |
           yarn install --immutable
           yarn global add vercel
 
       - name: Pull Vercel project
-        working-directory: ./my-app
+        working-directory: ./services/my-app
         run: vercel pull --environment production --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Build project
-        working-directory: ./my-app
+        working-directory: ./services/my-app
         run: vercel build --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy project
-        working-directory: ./my-app
+        working-directory: ./services/my-app
         run: vercel deploy --prod --prebuilt --token ${{ secrets.VERCEL_TOKEN }}
