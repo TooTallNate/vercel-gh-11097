@@ -31,7 +31,7 @@ jobs:
         working-directory: ./services/my-app
         run: |
           yarn install --immutable
-          npm install -g ${{ strategy.vercel-cli-version }}
+          npm install -g ${{ matrix.vercel-cli-version }}
           vercel --version
 
       - name: Pull Vercel project
