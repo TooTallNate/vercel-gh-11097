@@ -28,20 +28,16 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        working-directory: ./services/my-app
         run: |
           yarn install --immutable
           npm install -g ${{ matrix.vercel-cli-version }}
           vercel --version
 
       - name: Pull Vercel project
-        working-directory: ./services/my-app
         run: vercel pull --environment production --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Build project
-        working-directory: ./services/my-app
         run: vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy project
-        working-directory: ./services/my-app
         run: vercel deploy --prod --prebuilt --token ${{ secrets.VERCEL_TOKEN }}
