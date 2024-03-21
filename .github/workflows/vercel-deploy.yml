@@ -15,7 +15,8 @@ jobs:
       VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
     strategy:
-      vercel-cli-version: ["vercel@latest", "https://vercel-git-tootallnate-zero-1527-bug-we-should-look-into-9b5350.vercel.sh/tarballs/vercel.tgz"]
+      matrix:
+        vercel-cli-version: ["vercel@latest", "https://vercel-git-tootallnate-zero-1527-bug-we-should-look-into-9b5350.vercel.sh/tarballs/vercel.tgz"]
     steps:
       - name: Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
