@@ -36,7 +36,7 @@ jobs:
 
       - name: Build project
         working-directory: ./services/my-app
-        run: vercel build --token ${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy project
         working-directory: ./services/my-app
