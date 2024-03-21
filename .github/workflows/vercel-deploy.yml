@@ -27,7 +27,7 @@ jobs:
         working-directory: ./services/my-app
         run: |
           yarn install --immutable
-          yarn global add vercel
+          npm install -g vercel
 
       - name: Pull Vercel project
         working-directory: ./services/my-app
