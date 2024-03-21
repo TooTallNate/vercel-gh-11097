@@ -1,4 +1,8 @@
 {
   "name": "src",
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.1.1",
+  "private": true,
+  "workspaces": [
+    "services/*"
+  ]
 }
